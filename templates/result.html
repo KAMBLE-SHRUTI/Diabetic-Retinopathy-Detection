@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>Predicted Class: {{ predicted_class }}</p>
+    <img src="data:image/png;base64,{{ graph_url }}" alt="Severity Graph">
+    <h2>Precautionary Tips</h2>
+    <p>{{ tips }}</p>
+    <a href="/">Go Back to Home</a>
+</body>
+</html>
+

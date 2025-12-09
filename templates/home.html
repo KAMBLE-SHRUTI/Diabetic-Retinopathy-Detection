@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Learning Based Diabetic Retinopathy: An Intelligent System for Medical Diagnosis</title>
+    
+    <!-- All CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg " style="background: rgb(28, 26, 26); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white" href="#" style="font-size: 1.5rem;">
+                <span style="color: #cdfa07;">Diabetic Retinopathy</span>An Intelligent System
+            </a>
+            <button class="navbar-toggler border-0 shadow-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" 
+                style="background: rgb(98, 225, 8); padding: 5px 10px; border-radius: 5px;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-semibold px-3" href="#" style="transition: 0.3s;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-semibold px-3" href="#services" style="transition: 0.3s;">Services</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link text-white fw-semibold px-3" href="#contact" style="transition: 0.3s;">Contact Doctor</a>
+                    </li>        
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--HERO SEC-->
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Welcome to <span class="underlined">An Intelligent System</span>
+            </h1>
+            <p class="hero-description">
+                Advanced predictive tool designed to assess the severity and progression of diabetic retinopathy in individuals through automated analysis of retinal images.
+            </p>
+        </div>
+        
+        <div class="wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path 
+                    fill="#ffffff" 
+                    fill-opacity="1" 
+                    d="M0,32L80,42.7C160,53,320,75,480,74.7C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z">
+                </path>
+                <path 
+                    fill="#808080" 
+                    fill-opacity="0.3" 
+                    d="M0,60L80,65.3C160,71,320,81,480,77.3C640,73,800,56,960,51.3C1120,47,1280,55,1360,58.7L1440,62L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z">
+                </path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- about section starts -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-12">
+                    <div class="about-img">
+                        <img src="{{ url_for('static', filename='img/eyee2.png') }}" alt="" class="img-fluid" style="width: 400px; height: 350px;">
+
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
+                    <div class="about-text">
+                        <h3>Diabetic Retinopathy (DR) is a diabetes-related eye condition that damages the blood vessels in the retina, potentially leading to vision loss if untreated. </h3>
+                           <h5> <br>
+                            <li>No_DR – No visible signs of retinopathy.</li>
+                            <li>Mild DR – Early signs such as microaneurysms.</li>
+                            <li>Moderate DR – Increased number of microaneurysms and hemorrhages.</li> 
+                            <li>Severe DR – Blocked blood vessels deprive the retina of oxygen.</li>
+                            <li>Proliferative_DR – Advanced stage where abnormal blood vessels grow.</li></h5>
+                            <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about section Ends -->
+
+    <!-- services section Starts -->
+    <section class="services section-padding" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header text-center pb-5">
+                        <h2>Our Services</h2>
+                        <p>For Prediction and Detection of Diesease <br> use this services</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-4">
+                    <div class="card text-white text-center bg-dark pb-2">
+                        <div class="card-body">
+                            <i class="bi bi-laptop"></i>
+                            <h3 class="card-title"> Diabetic Retinopathy Detection</h3>
+                            <p class="lead">Predictive model for the PestRisk Analyzer will be designed to forecast both short-term symptoms and long-term diseases resulting from pesticide ingestion to human being those who work and leave near Farms. Moreover, this predictive model with take an pesticide name input from the user and diagnose short term symptoms and long term diseases.</p>
+                            <button class="btn bg-warning text-dark">
+                                <a href="/predict" style="text-decoration: none; color: inherit;">USE SERVICE</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-4">
+                    <div class="card text-white text-center bg-dark pb-2">
+                        <div class="card-body">
+                            <i class="bi bi-journal"></i>
+                            <h3 class="card-title">ChatBot</h3>
+                            <p class="lead">Smart Bot will play a crucial role in the Diabetic Retinopathy Detection System by acting as an intelligent assistant, offering real-time interactions with users, including patients, ophthalmologists, and healthcare providers. The bot will enhance the user experience by delivering timely, personalized, and reliable insights based on the predictive deep learning model. </p>
+                            <button class="btn bg-warning text-dark">
+                                <a href="/chatbot" style="text-decoration: none; color: inherit;">USE SERVICE</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-12 col-lg-4">
+                    <div class="card text-white text-center bg-dark pb-2">
+                        <div class="card-body">
+                            <i class="bi bi-intersect"></i>
+                            <h3 class="card-title">Contact</h3>
+                            <p class="lead">The Contact Service will serve as a vital communication bridge within the Diabetic Retinopathy Detection System, allowing users—including patients, doctors, and researchers—to reach out for support, provide feedback, or make inquiries. This service will enhance user engagement by offering a convenient and accessible channel for assistance and continuous improvement of the diagnostic platform.</p>
+                            <button class="btn bg-warning text-dark">
+                                <a href="/contact" style="text-decoration: none; color: inherit;">USE SERVICE</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- services section Ends -->
+
+    <!-- Call to Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+        <div class="container">
+            <div class="row" data-aos="zoom-in" data-aos-delay="100">
+                <div class="col-xl-9 text-center text-xl-start">
+                    <h3>Call To Action</h3>
+                    <p>IN CASE OF ANY EMERGENCY, YOU MAY CALL TO 108 FOR QUICK AMBULANCE SERVICE </p>
+                </div>
+                <div class="col-xl-3 cta-btn-container text-center">
+                    <a class="cta-btn align-middle" href="Tel:108">Call To 108</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section Starts -->
+    <section id="portfolio" class="portfolio section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header text-center pb-5">
+                        <h2>Specialist And Multispeciality Hospitals</h2>
+                        <p>Top Hospitals Listed In Our Region <br>Providing Proper Treatment to Cure Us</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Hospital 1 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card text-center bg-white shadow-sm">
+                        <div class="img-area mb-4">
+                            <img src="{{ url_for('static', filename='img/pragati.jpg') }}" class="img-fluid rounded-top" alt="Siddhivinayak Heart Hospital">
+                        </div>
+                        <div class="card-body text-dark">
+                            <h3 class="card-title font-weight-bold mb-3">Pragati Netra Rugnalay</h3>
+                            <p class="card-text">Pragati Netra Rugnalaya is headed by Dr. Atul Mr Joglekar, chief eye surgeon & Medical Director who has been working in the field of ophthalmology since 35 years. </p>
+                            <a href="http://www.pragatinetra.com/" class="btn btn-warning text-dark">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hospital 2 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card text-center bg-white shadow-sm">
+                        <div class="img-area mb-4">
+                            <img src="{{ url_for('static', filename='img/insure.png') }}" class="img-fluid rounded-top" alt="Kolhapur Cancer Center">
+                        </div>
+                        <div class="card-body text-dark">
+                            <h3 class="card-title font-weight-bold mb-3">Insure Diagnostic Centre</h3>
+                            <p class="card-text">Insure Diagnostic Centre in Station Road, Kolhapur 
+Located in Station Road, Kolhapur, Insure Diagnostic Centre is a trusted name in the healthcare and diagnostic field, offering comprehensive medical diagnostics, lab testing, and healthcare services. 
+</p>
+                            <a href="https://www.justdial.com/Kolhapur/Insure-Diagnostic-Centre-Beside-Panchasheel-Hotel-Station-Road/0231PX231-X231-221116223211-W5L4_BZDET" class="btn btn-warning text-dark">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hospital 3 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="card text-center bg-white shadow-sm">
+                        <div class="img-area mb-4">
+                            <img src="{{ url_for('static', filename='img/contacare.webp') }}" class="img-fluid rounded-top" alt="Sachin Multispeciality Hospital">
+                        </div>
+                        <div class="card-body text-dark">
+                            <h3 class="card-title font-weight-bold mb-3">Contacare Eye Hospital Kolhapur</h3>
+                            <p class="card-text">At EyeSurgeonsHub.com, we are dedicated to being your comprehensive resource for eye care. Our mission is to connect you with the finest eye surgeons and hospitals, ensuring you receive the highest standard of care for your vision needs.</p>
+                            <a href="https://eyesurgeonshub.com/directory/contacare-eye-hospital-kolhapur/" class="btn btn-warning text-dark">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Section Ends -->
+
+    <!-- Contact starts -->
+    <section id="contact" class="contact section-padding">
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-header text-start pb-5">
+                        <h2>Contact To Doctor </h2>
+                        <p>Dr. Chetan Kharkande</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-0"> 
+                <!-- Right Side Contact Info with Address, Phone, and Name -->
+                <div class="col-md-6 p-0 pt-4 pb-4">
+                    <div class="contact-info p-4">
+                        <p><strong>Address:</strong> Vivekanand Eye Hospital<br>
+                      783/2 A, B Ward, Ravivar Peth,<br> Azad Chowk to Uma Talkies Road.,<br> Landmark: Near Biroba Mandir., <br>Kolhapur r</p>
+                        <p><strong>Call us:</strong> 02071177301</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer starts -->
+    <footer class="bg-dark p-2 text-center">
+        <div class="container">
+            <p class="text-white">Diabetic Retinopathy: An Intelligent System</p>
+        </div>
+    </footer>
+    <!-- footer ends -->
+
+    <!-- All Js -->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

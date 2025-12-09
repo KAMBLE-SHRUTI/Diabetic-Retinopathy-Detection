@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('2.jpg'); /* Replace with your image URL */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 700px;
+            transition: transform 0.3s;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        h1 {
+            color: #0b0214;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 15px 0 5px;
+        }
+        input {
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            border-color: #6a11cb;
+            outline: none;
+        }
+        button {
+            background-color: #6a11cb;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 90%;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #2575fc;
+            transform: translateY(-2px);
+        }
+        .response {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #6a11cb;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .response h2 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #6a11cb;
+        }
+        .response p {
+            margin: 0;
+        }
+        .error {
+            margin-top: 20px;
+            padding: 15px;
+            background: #ffe0e0;
+            border-left: 4px solid #ff4d4d;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            color: #ff4d4d;
+        }
+        .error h2 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #ff4d4d;
+        }
+        .error p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ChatBot</h1>
+        <form method="POST" id="chatForm">
+            <label for="query">Ask your question:</label>
+            <input type="text" id="query" name="query" required>
+            <button type="submit">Ask</button>
+        </form>
+        {% if error %}
+        <div class="error" id="errorDiv">
+            <h2>Error:</h2>
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+        {% if response %}
+        <div class="response" id="responseDiv">
+            <h2>Response:</h2>
+            <p>{{ response }}</p>
+            <button type="button" id="backButton">Back</button>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const backButton = document.getElementById('backButton');
+            const responseDiv = document.getElementById('responseDiv');
+            const chatForm = document.getElementById('chatForm');
+            const queryInput = document.getElementById('query');
+            const errorDiv = document.getElementById('errorDiv');
+
+            if (backButton) {
+                backButton.addEventListener('click', function() {
+                    if (responseDiv) {
+                        responseDiv.style.display = 'none';
+                    }
+                    queryInput.value = ''; //optional: clear the input after back button is pressed.
+                    if (errorDiv) {
+                        errorDiv.style.display = 'none'; // Hide error message on new query
+                    }
+                });
+            }
+
+            chatForm.addEventListener('submit', function() {
+                if (responseDiv) {
+                    responseDiv.style.display = 'block'; // Show response area when a new query is submitted
+                }
+                if (errorDiv) {
+                    errorDiv.style.display = 'none'; // Hide any previous error messages
+                }
+            });
+        });
+    </script>
+</body>
+</html>
